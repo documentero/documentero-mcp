@@ -1,6 +1,7 @@
 {
   "name": "@documentero/mcp",
   "version": "0.1.2",
+  "mcpName": "io.github.documentero/documentero-mcp",
   "description": "Official Documentero MCP server — list templates, get field schemas, and generate documents for AI agents (Cursor, Claude, etc.)",
   "type": "module",
   "main": "./dist/index.js",

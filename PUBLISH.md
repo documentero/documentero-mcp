@@ -57,8 +57,35 @@ npx -y @documentero/mcp
 # (expects DOCUMENTERO_API_KEY; should exit with a clear error without it)
 ```
 
+## Official MCP Registry
+
+Registry hosts metadata only; the npm package must already include matching `mcpName`.
+
+```bash
+# 1. Ensure package.json has mcpName matching server.json name
+#    "mcpName": "io.github.documentero/documentero-mcp"
+
+# 2. Publish (or republish) npm so mcpName is on the live package
+npm publish --access public --otp=YOUR_CODE
+
+# 3. Keep server.json version in sync with package.json, then:
+brew install mcp-publisher   # once
+mcp-publisher validate
+mcp-publisher login github   # device flow; must be a member of github.com/documentero
+mcp-publisher publish
+```
+
+Verify:
+
+```bash
+curl -sS "https://registry.modelcontextprotocol.io/v0/servers?search=documentero"
+```
+
+Server name: `io.github.documentero/documentero-mcp`
+
 ## After publish
 
 1. Confirm Integrations → **MCP (AI Agents)** links resolve.
 2. Optionally add a docs page under docs.documentero.com (same pattern as n8n).
-3. Bump version with `npm version patch|minor` for later releases.
+3. Bump version with `npm version patch|minor` for later releases (also bump `server.json` `version` + `packages[0].version`, then re-run `mcp-publisher publish`).
+

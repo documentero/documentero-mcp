@@ -1,0 +1,38 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.documentero/documentero-mcp",
+  "title": "Documentero",
+  "description": "List Documentero templates, inspect field schemas, and generate Word/PDF/Excel documents.",
+  "websiteUrl": "https://www.documentero.com",
+  "repository": {
+    "url": "https://github.com/documentero/documentero-mcp",
+    "source": "github"
+  },
+  "version": "0.1.2",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@documentero/mcp",
+      "version": "0.1.2",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "DOCUMENTERO_API_KEY",
+          "description": "Company API key from Documentero Account settings",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true
+        },
+        {
+          "name": "DOCUMENTERO_BASE_URL",
+          "description": "Optional Cloud API base URL (default: https://app.documentero.com/api)",
+          "isRequired": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
