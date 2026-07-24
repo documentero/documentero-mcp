@@ -4,7 +4,7 @@ Official [MCP](https://modelcontextprotocol.io) server for [Documentero](https:/
 
 - **npm:** [`@documentero/mcp`](https://www.npmjs.com/package/@documentero/mcp)
 - **Source:** [github.com/documentero/documentero-mcp](https://github.com/documentero/documentero-mcp)
-- **Support:** [support@documentero.com](mailto:support@documentero.com)
+- **Website:** [documentero.com](https://documentero.com/)
 - **Docs:** [docs.documentero.com](https://docs.documentero.com/documentation)
 
 ## Tools
@@ -13,7 +13,7 @@ Official [MCP](https://modelcontextprotocol.io) server for [Documentero](https:/
 |------|-------------|
 | `list_templates` | Templates with `kind` (word\|excel), `defaultFormat`, `allowedFormats` |
 | `get_template_fields` | JSON Schema (primary, enriched value rules) + field definitions + allowed formats |
-| `generate_document` | Generate a document; signed URL (~1h) by default, or base64 if `embed: true`. `format` optional (template default). |
+| `generate_document` | Generate Word/PDF or Excel document for given template and fields; signed URL (~1h) by default, or base64 if `embed: true`. `format` optional (template default). |
 
 ## Setup
 
@@ -86,7 +86,7 @@ DOCUMENTERO_API_KEY=your-key npm run smoke
 
 - Thin client of the public Cloud API (`/api/templates`, `/api/meta`, `/api/generate`). Quotas and rate limits are enforced by Documentero as usual.
 - Do not put the API key in tool arguments — keep it in MCP env only.
-- Word templates support `docx` / `pdf`; Excel templates support `xlsx` only.
+- Word templates support output format: `docx` / `pdf`; Excel templates support output format: `xlsx` only.
 - Remote Streamable HTTP hosting (`https://mcp.documentero.com/mcp`) is planned; this release is **stdio only**.
 
 ## License

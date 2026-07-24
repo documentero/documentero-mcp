@@ -40,7 +40,7 @@ export function createServer(client: DocumenteroClient): McpServer {
     {
       title: 'Generate document',
       description:
-        'Generate a document from a Documentero template. Call get_template_fields first. Shape data to match jsonSchema (and field value rules: image URL/base64, link URL, qrcode content, etc.; use \\n for multiline text). format is optional — if omitted, the template defaultFormat is used; when set it must be in allowedFormats (word: docx|pdf; excel: xlsx only). By default the response data is a time-limited signed download URL (~1 hour). Set embed=true to get base64 file content (fileName, fileContent, fileExtension, contentType) instead of a URL. Email delivery options exist on the Cloud API but are not exposed by this tool.',
+        'Generates a document for given template and fields. Call get_template_fields first and shape data to match jsonSchema (and field value rules: image URL/base64, link URL, qrcode content, etc.; use \\n for multiline text). format is optional — if omitted, the template defaultFormat is used; when set it must be in allowedFormats (word: docx|pdf; excel: xlsx only). By default returns a time-limited signed download URL (~1 hour). Set embed=true for base64 file content (fileName, fileContent, fileExtension, contentType) instead of a URL.',
       inputSchema: {
         templateId: z
           .string()
