@@ -1,0 +1,63 @@
+{
+  "name": "@documentero/mcp",
+  "version": "0.1.1",
+  "description": "Official Documentero MCP server — list templates, get field schemas, and generate documents for AI agents (Cursor, Claude, etc.)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "documentero-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "smoke": "node scripts/smoke.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "documentero",
+    "mcp",
+    "model-context-protocol",
+    "document-generation",
+    "docx",
+    "pdf",
+    "xlsx",
+    "cursor",
+    "claude"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/documentero/documentero-mcp#readme",
+  "author": {
+    "name": "Documentero",
+    "email": "support@documentero.com",
+    "url": "https://www.documentero.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/documentero/documentero-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/documentero/documentero-mcp/issues",
+    "email": "support@documentero.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3"
+  }
+}
